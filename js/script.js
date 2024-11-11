@@ -48,7 +48,7 @@ function filterArticles() {
     let firstArticle = filteredArticles[0];
     if (firstArticle) {
         let mainArticleHTML = `
-        <div class="row main gx-4 gx-lg-5  align-items-center my-5 article-title">
+        <div class="row main gx-4 gx-lg-5  align-items-center article-title">
             <div class="col-lg-7 card-image-top">
                 <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
             </div>
