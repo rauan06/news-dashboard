@@ -5,7 +5,7 @@ let jsonData = `
           "id": 27252,
           "title": "Expending the Expendables: More launch companies are betting their future on reusability",
           "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2024/11/GZ45r9MagAAPXbL-scaled.jpeg",
-          "summary": "Almost no one thought SpaceX would make the catch, at least not on the first try. On the fifth integrated test flight of Starship, launched Oct. 13 from the company’s […]",
+          "summary": "Almost no one thought SpaceX would make the catch, at least not on the first try. On the fifth integrated test flight of Starship, launched Oct. 13 from the company’s.",
           "published_at": "2024-11-11T13:00:00Z",
           "category": "Technology",
           "views":100
@@ -23,7 +23,7 @@ let jsonData = `
           "id": 27250,
           "title": "Arianespace Pushes Second Flight of Ariane 6 to February 2025",
           "image_url": "https://europeanspaceflight.com/wp-content/uploads/2024/11/Arianespace-Pushes-Second-Flight-of-Ariane-6-to-February-2025.jpg",
-          "summary": "Arianespace has announced that it will not attempt the second flight of its Ariane 6 rocket in 2024, with the launch now pushed to no earlier than February 2025. Ariane 6 was launched for the first time in July 2024. While the flight was labeled a success by Arianespace, an anomaly during the flight prevented […]",
+          "summary": "Arianespace has announced that it will not attempt the second flight of its Ariane 6 rocket in 2024, with the launch now pushed to no earlier than February 2025. Ariane 6 was launched for the first time in July 2024. While the flight was labeled a success by Arianespace, an anomaly during the flight prevented.",
           "published_at": "2024-11-11T10:21:12Z",
           "category": "Technology",
           "views":100
@@ -32,7 +32,7 @@ let jsonData = `
           "id": 27249,
           "title": "Interview with OCEANOS Instructor María Fernanda Barbarena-Arias",
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/1q4a4494.jpg?w=2048",
-          "summary": "What is your name and your role with OCEANOS? My name is María Fernanda Barbarena-Arias. I am an associate professor of biology at the American University of Puerto Rico, Metropolitan Campus. I am also a co-PI in the OCEANOS project, and an instructor and mentor for the students during the internship. What is the importance […]",
+          "summary": "What is your name and your role with OCEANOS? My name is María Fernanda Barbarena-Arias. I am an associate professor of biology at the American University of Puerto Rico, Metropolitan Campus. I am also a co-PI in the OCEANOS project, and an instructor and mentor for the students during the internship. What is the importance.",
           "published_at": "2024-11-11T09:44:53Z",
           "category": "Environment",
           "views":100
@@ -41,7 +41,7 @@ let jsonData = `
           "id": 27246,
           "title": "Interview with OCEANOS Instructor Samuel Suleiman",
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/img-2293.jpg?w=2048",
-          "summary": "What is your name and your role with OCEANOS? My name is Samuel Suleiman and I am the Executive Director of Sociedad Ambiente Marino: an NGO in Puerto Rico that has been working for the last 25 years to conserve our coastline and our reefs. During the OCEANOS internship, I am one of the Co-PIs […]",
+          "summary": "What is your name and your role with OCEANOS? My name is Samuel Suleiman and I am the Executive Director of Sociedad Ambiente Marino: an NGO in Puerto Rico that has been working for the last 25 years to conserve our coastline and our reefs. During the OCEANOS internship, I am one of the Co-PIs.",
           "published_at": "2024-11-11T09:36:07Z",
           "category": "Environment",
           "views":100
@@ -50,7 +50,7 @@ let jsonData = `
           "id": 27247,
           "title": "Interview with OCEANOS Instructor Roy Armstrong",
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/1q4a1721.jpg?w=2048",
-          "summary": "What is your name and your role with OCEANOS? My name is Ray Armstrong and I am a professor in the Department of Marine Sciences of the University of Puerto Rico. I came to be involved in OCEANOS because my ex-student and good friend Juan Torres-Perez, who works at NASA Ames Research Center, came up […]",
+          "summary": "What is your name and your role with OCEANOS? My name is Ray Armstrong and I am a professor in the Department of Marine Sciences of the University of Puerto Rico. I came to be involved in OCEANOS because my ex-student and good friend Juan Torres-Perez, who works at NASA Ames Research Center, came up.",
           "published_at": "2024-11-11T09:35:49Z",
           "category": "Environment",
           "views":100
@@ -59,7 +59,7 @@ let jsonData = `
           "id": 27248,
           "title": "Interview with OCEANOS PI Juan Torres-Pérez",
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/1q4a4282.jpg?w=2048",
-          "summary": "What is your name and your role with OCEANOS? My name is Juan Torres-Pérez. I am a research scientist at NASA Ames Research Center in the Earth Sciences division, biospheric sciences branch. I am the PI of OCEANOS, which stands for Ocean Community Engagement and Awareness with NASA Observations and Science for Hispanic/Latino students. What […]",
+          "summary": "What is your name and your role with OCEANOS? My name is Juan Torres-Pérez. I am a research scientist at NASA Ames Research Center in the Earth Sciences division, biospheric sciences branch. I am the PI of OCEANOS, which stands for Ocean Community Engagement and Awareness with NASA Observations and Science for Hispanic/Latino students.",
           "published_at": "2024-11-11T09:35:23Z",
           "category": "Environment",
           "views":100
@@ -67,7 +67,7 @@ let jsonData = `
       {
           "id": 27245,
           "title": "Live coverage: SpaceX to launch Koreasat-6A on Falcon 9 rocket from the Kennedy Space Center",
-          "image_url": "http://spaceflightnow.com/wp-content/uploads/2024/11/20241110_koreasat-6a_render_small.jpeg",
+          "image_url": "https://spaceflightnow.com/wp-content/uploads/2024/11/20241110_koreasat-6a_render_small.jpeg",
           "summary": "Liftoff of the Koreasat-6A mission from Launch Complex 39A (LC-39A) at NASA’s Kennedy Space Center is set for 12:07 p.m. EST (1707 UTC).",
           "published_at": "2024-11-11T00:55:22Z",
           "category": "Technology",
@@ -86,7 +86,7 @@ let jsonData = `
           "id": 27243,
           "title": "What’s Happening in Space Policy November 10-16, 2024",
           "image_url": "https://spacepolicyonline.com/wp-content/uploads/2024/11/John-Thune-240x300.jpg",
-          "summary": "Here is SpacePolicyOnline.com’s list of space policy events for the week of November 10-16, 2024 and any insight we can offer about them. The House and Senate return to work...",
+          "summary": "Here is SpacePolicyOnline.com’s list of space policy events for the week of November 10-16, 2024 and any insight we can offer about them. The House and Senate return to work.",
           "published_at": "2024-11-10T23:19:21Z",
           "category": "Politics",
           "views":100
@@ -95,60 +95,104 @@ let jsonData = `
 }`;
 
 let data = JSON.parse(jsonData);
-
-// Container for articles
 let container = document.getElementById('articles-container');
+var myModal = new bootstrap.Modal(document.getElementById('articleModal'));
+let sortCriteria = 'views';  // Default sorting criteria is by views
+let currentCategory = 'All'; // Default category is All
 
-// Function to filter articles by category
+function sortArticles(criteria) {
+    sortCriteria = criteria;  // Update the sorting criteria based on the button clicked
+    filterArticlesByCategory(currentCategory);  // Reapply the filtering and sorting with the new criteria
+}
+
 function filterArticlesByCategory(category) {
     let filteredArticles = category === 'All' ? data.articles : data.articles.filter(article => article.category === category);
 
+    // Sort articles based on the selected criteria
+    if (sortCriteria === 'views') {
+        filteredArticles.sort((a, b) => b.views - a.views);
+    } else if (sortCriteria === 'title') {
+        filteredArticles.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    // Handle no articles case
     let firstArticle = filteredArticles[0];
-    let mainArticleHTML = `
-    <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
-        </div>
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">${firstArticle.title}</h1>
-            <p>${firstArticle.summary}</p>
-            <a class="btn btn-primary" href="#!">Read More</a>
-        </div>
-    </div>`;
 
-    document.getElementById('article-main-container').innerHTML = mainArticleHTML;
+    if (firstArticle) {
+        let mainArticleHTML = `
+        <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <div class="col-lg-7">
+                <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
+            </div>
+            <div class="col-lg-5">
+                <h1 class="font-weight-light">${firstArticle.title}</h1>
+                <p>${firstArticle.summary.substring(0, 100)}…</p>
+                <a class="btn btn-primary" href="#!" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${firstArticle.id}">Read More</a>
+            </div>
+        </div>`;
+        document.getElementById('article-main-container').innerHTML = mainArticleHTML;
+        filteredArticles = filteredArticles.slice(1); // Remove the first article from the list
+    } else {
+        document.getElementById('article-main-container').innerHTML = '<p>No articles available</p>';
+    }
 
-    filteredArticles = filteredArticles.slice(1)
-
-    // Clear the existing articles in the container
-    container.innerHTML = '';
-
-    // Insert the filtered articles
+    // Clear the previous articles and display the filtered ones
+    let articlesHTML = '';
     filteredArticles.forEach((article) => {
-        let articleHTML = `
+        articlesHTML += `
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <img src="${article.image_url}" alt="Article Image" class="card-img-top">
                 <div class="card-body">
                     <h2 class="card-title">${article.title}</h2>
-                    <p class="card-text">${article.summary}</p>
+                    <p>${firstArticle.summary.substring(0, 100)}…</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer">
+                    <a class="btn btn-primary btn-sm" href="#!" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${article.id}">More Info</a>
+                </div>
             </div>
         </div>`;
+    });
 
-        container.innerHTML += articleHTML;
+    // Inject the HTML at once
+    container.innerHTML = articlesHTML;
+
+    // Reapply modal event listeners after the DOM is updated
+    document.querySelectorAll('[data-bs-toggle="modal"]').forEach((button) => {
+        button.addEventListener('click', (e) => {
+            let articleId = e.target.getAttribute('data-article-id');
+            console.log('Clicked article ID:', articleId); // Check if the ID is being retrieved correctly
+            let article = data.articles.find(a => a.id == articleId);
+            
+            if (article) {
+                // Increment views when modal is opened
+                article.views++;
+                
+                // Log to confirm the article is found and views are incremented
+                console.log(`Article ID: ${articleId} - Views: ${article.views}`);
+                
+                // Set modal content with article data
+                document.getElementById('modalTitle').textContent = article.title;
+                document.getElementById('modalImage').src = article.image_url;
+                document.getElementById('modalImage').alt = article.title; // Ensure alt attribute is set for the image
+                document.getElementById('modalSummary').textContent = article.summary;
+                document.getElementById('modalViews').textContent = article.views;
+            } else {
+                console.log('Article not found');
+            }
+        });
     });
 }
 
-// Event listeners for category links
 document.querySelectorAll('.nav-link').forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const category = e.target.textContent;
+        currentCategory = category; // Update current category
         filterArticlesByCategory(category);
     });
 });
 
-// Initial rendering of articles
+// Initial call to display articles
 filterArticlesByCategory('All');
+  
