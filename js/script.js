@@ -6,7 +6,7 @@ let searchQuery = ''; // Default search query is empty
 let data = { articles: [] }; // Initial empty data
 
 // Load JSON file
-fetch('articles.json')
+fetch('data/articles.json')
     .then(response => response.json())
     .then(jsonData => {
         data = jsonData; // Store the fetched data
