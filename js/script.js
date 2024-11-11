@@ -2,6 +2,7 @@ let container = document.getElementById('articles-container');
 var myModal = new bootstrap.Modal(document.getElementById('articleModal'));
 let sortCriteria = 'views'; // Default sorting criteria is by views
 let currentCategory = 'All'; // Default category is All
+let searchQuery = ''; // Default search query is empty
 let data = { articles: [] }; // Initial empty data
 
 // Load JSON file
@@ -9,19 +10,32 @@ fetch('articles.json')
     .then(response => response.json())
     .then(jsonData => {
         data = jsonData; // Store the fetched data
-        filterArticlesByCategory('All'); // Filter and display articles after loading data
+        filterArticles(); // Filter and display articles after loading data
     })
     .catch(error => {
         console.error('Error loading articles data:', error);
     });
 
-function sortArticles(criteria) {
-    sortCriteria = criteria; // Update the sorting criteria based on the button clicked
-    filterArticlesByCategory(currentCategory); // Reapply the filtering and sorting with the new criteria
+// Handle filter change
+function handleFilterChange() {
+    currentCategory = document.getElementById('filterDropdown').value;
+    filterArticles(); // Reapply the filtering based on selected category
 }
 
-function filterArticlesByCategory(category) {
-    let filteredArticles = category === 'All' ? data.articles : data.articles.filter(article => article.category === category);
+// Handle search input change
+function handleSearchChange() {
+    searchQuery = document.getElementById('searchBar').value.toLowerCase();
+    filterArticles(); // Reapply the filtering based on search query
+}
+
+// Apply filtering and sorting
+function filterArticles() {
+    // Filter articles based on category and search query
+    let filteredArticles = data.articles.filter(article => {
+        const matchesCategory = currentCategory === 'All' || article.category === currentCategory;
+        const matchesSearch = article.title.toLowerCase().includes(searchQuery) || article.summary.toLowerCase().includes(searchQuery);
+        return matchesCategory && matchesSearch;
+    });
 
     // Sort articles based on the selected criteria
     if (sortCriteria === 'views') {
@@ -32,16 +46,15 @@ function filterArticlesByCategory(category) {
 
     // Handle no articles case
     let firstArticle = filteredArticles[0];
-
     if (firstArticle) {
         let mainArticleHTML = `
-        <div class="row gx-4 gx-lg-5 align-items-center my-5 article-title">
-            <div class="col-lg-7">
+        <div class="row main gx-4 gx-lg-5  align-items-center my-5 article-title">
+            <div class="col-lg-7 card-image-top">
                 <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
             </div>
             <div class="col-lg-5">
                 <h1 class="article-title">${firstArticle.title}</h1>
-                <p class=article-summary>${firstArticle.summary.substring(0, 100)}…</p>
+                <p class="article-summary">${firstArticle.summary.length > 100 ? firstArticle.summary.substring(0, 100) + "…" : firstArticle.summary}</p>
                 <a class="btn btn-primary" href="#!" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${firstArticle.id}">Read More</a>
             </div>
         </div>`;
@@ -54,15 +67,12 @@ function filterArticlesByCategory(category) {
     // Clear the previous articles and display the filtered ones
     let articlesHTML = '';
     filteredArticles.forEach((article) => {
-        let truncatedTitle = article.title.length > 50 ?
-            article.title.substring(0, 50) + "…" :
-            article.title;
         articlesHTML += `
         <div class="col-md-4 mb-4">
             <a href="#!" class="article card h-100 border-0 shadow-sm text-decoration-none" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${article.id}">
                 <img src="${article.image_url}" alt="Article Image" class="card-img-top article-img">
                 <div class="card-body">
-                    <h2 class="card-title article-title">${truncatedTitle}</h2>
+                    <h2 class="card-title article-title">${article.title.length > 50 ? article.title.substring(0, 50) + "…" : article.title }</h2>
                     <p class="card-text article-summary">${article.summary.length > 100 ? article.summary.substring(0, 100) + "…" : article.summary}</p>
                 </div>
             </a>
@@ -106,13 +116,8 @@ function filterArticlesByCategory(category) {
     });
 }
 
-document.querySelectorAll('.nav-link').forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const category = e.target.textContent;
-        currentCategory = category; // Update current category
-        filterArticlesByCategory(category);
-    });
-});
-
-// Initial call to display articles (after JSON file is loaded)
+// Handle sorting
+function sortArticles(criteria) {
+    sortCriteria = criteria; // Update the sorting criteria based on the button clicked
+    filterArticles(); // Reapply the filtering and sorting with the new criteria
+}
