@@ -86,13 +86,33 @@ let jsonData = `
 
 let data = JSON.parse(jsonData);
 
-let container = document.getElementById('articles-container');
+// Insert the first article as the main article
+let firstArticle = data.articles[0];
+let mainArticleHTML = `
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
+    </div>
+    <div class="col-lg-5">
+        <h1 class="font-weight-light">${firstArticle.title}</h1>
+        <p>${firstArticle.summary}</p>
+        <a class="btn btn-primary" href="#!">Read More</a>
+    </div>
+</div>`;
 
+document.getElementById('article-main-container').innerHTML = mainArticleHTML;
+
+// Remove the first article from the list
+data.articles = data.articles.slice(1);
+
+
+let container = document.getElementById('articles-container');
+// Insert the remaining articles
 data.articles.forEach((article) => {
     let articleHTML = `
     <div class="col-md-4 mb-5">
         <div class="card h-100">
-        <img src="${article.image_url}" alt="Article Image" class="card-img-top">
+            <img src="${article.image_url}" alt="Article Image" class="card-img-top">
             <div class="card-body">
                 <h2 class="card-title">${article.title}</h2>
                 <p class="card-text">${article.summary}</p>
