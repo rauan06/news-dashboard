@@ -88,23 +88,18 @@ let data = JSON.parse(jsonData);
 
 let container = document.getElementById('articles-container');
 
-for (let article of data.articles) {
+data.articles.forEach((article) => {
     let articleHTML = `
-    <div class="article">
-        <div class="article-header">
-            <img src="${article.image_url}" alt="Article Image">
-            <div>
-                <h1>${article.title}</h1>
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+        <img src="${article.image_url}" alt="Article Image" class="card-img-top">
+            <div class="card-body">
+                <h2 class="card-title">${article.title}</h2>
+                <p class="card-text">${article.summary}</p>
             </div>
-        </div>
-        <div class="article-summary">
-            <p>${article.summary}</p>
-        </div>
-        <div class="article-footer">
-            <p>Published on: ${new Date(article.published_at).toLocaleDateString()}</p>
-            <p>Views: ${article.views}</p>
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
         </div>
     </div>`;
 
     container.innerHTML += articleHTML;
-}
+});
