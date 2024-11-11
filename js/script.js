@@ -97,12 +97,12 @@ let jsonData = `
 let data = JSON.parse(jsonData);
 let container = document.getElementById('articles-container');
 var myModal = new bootstrap.Modal(document.getElementById('articleModal'));
-let sortCriteria = 'views';  // Default sorting criteria is by views
+let sortCriteria = 'views'; // Default sorting criteria is by views
 let currentCategory = 'All'; // Default category is All
 
 function sortArticles(criteria) {
-    sortCriteria = criteria;  // Update the sorting criteria based on the button clicked
-    filterArticlesByCategory(currentCategory);  // Reapply the filtering and sorting with the new criteria
+    sortCriteria = criteria; // Update the sorting criteria based on the button clicked
+    filterArticlesByCategory(currentCategory); // Reapply the filtering and sorting with the new criteria
 }
 
 function filterArticlesByCategory(category) {
@@ -120,7 +120,7 @@ function filterArticlesByCategory(category) {
 
     if (firstArticle) {
         let mainArticleHTML = `
-        <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center my-5 article-title">
             <div class="col-lg-7">
                 <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
             </div>
@@ -139,44 +139,46 @@ function filterArticlesByCategory(category) {
     // Clear the previous articles and display the filtered ones
     let articlesHTML = '';
     filteredArticles.forEach((article) => {
+        let truncatedTitle = article.title.length > 50 ?
+            article.title.substring(0, 50) + "…" :
+            article.title;
         articlesHTML += `
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <img src="${article.image_url}" alt="Article Image" class="card-img-top">
+        <div class="col-md-4 mb-4">
+            <a href="#!" class="card h-100 border-0 shadow-sm text-decoration-none" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${article.id}">
+                <img src="${article.image_url}" alt="Article Image" class="card-img-top article-img">
                 <div class="card-body">
-                    <h2 class="card-title">${article.title}</h2>
-                    <p>${firstArticle.summary.substring(0, 100)}…</p>
+                    <h2 class="card-title article-title">${truncatedTitle}</h2>
+                    <p class="card-text article-summary">${article.summary.length > 100 ? article.summary.substring(0, 100) + "…" : article.summary}</p>
                 </div>
-                <div class="card-footer">
-                    <a class="btn btn-primary btn-sm" href="#!" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${article.id}">More Info</a>
-                </div>
-            </div>
+            </a>
         </div>`;
     });
+
+
 
     // Inject the HTML at once
     container.innerHTML = articlesHTML;
 
     // Reapply modal event listeners after the DOM is updated
-    document.querySelectorAll('[data-bs-toggle="modal"]').forEach((button) => {
-        button.addEventListener('click', (e) => {
+    document.querySelectorAll('[data-bs-toggle="modal"]').forEach((anchor) => {
+        anchor.addEventListener('click', (e) => {
             let articleId = e.target.getAttribute('data-article-id');
-            console.log('Clicked article ID:', articleId); // Check if the ID is being retrieved correctly
             let article = data.articles.find(a => a.id == articleId);
-            
+
             if (article) {
                 // Increment views when modal is opened
                 article.views++;
-                
+
                 // Log to confirm the article is found and views are incremented
                 console.log(`Article ID: ${articleId} - Views: ${article.views}`);
-                
+
                 // Set modal content with article data
                 document.getElementById('modalTitle').textContent = article.title;
                 document.getElementById('modalImage').src = article.image_url;
                 document.getElementById('modalImage').alt = article.title; // Ensure alt attribute is set for the image
                 document.getElementById('modalSummary').textContent = article.summary;
                 document.getElementById('modalViews').textContent = article.views;
+                myModal.show();
             } else {
                 console.log('Article not found');
             }
@@ -195,4 +197,3 @@ document.querySelectorAll('.nav-link').forEach((link) => {
 
 // Initial call to display articles
 filterArticlesByCategory('All');
-  
