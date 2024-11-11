@@ -40,8 +40,8 @@ function filterArticlesByCategory(category) {
                 <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
             </div>
             <div class="col-lg-5">
-                <h1 class="font-weight-light">${firstArticle.title}</h1>
-                <p>${firstArticle.summary.substring(0, 100)}…</p>
+                <h1 class="article-title">${firstArticle.title}</h1>
+                <p class=article-summary>${firstArticle.summary.substring(0, 100)}…</p>
                 <a class="btn btn-primary" href="#!" data-bs-toggle="modal" data-bs-target="#articleModal" data-article-id="${firstArticle.id}">Read More</a>
             </div>
         </div>`;
