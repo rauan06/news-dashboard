@@ -7,6 +7,7 @@ let jsonData = `
           "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2024/11/GZ45r9MagAAPXbL-scaled.jpeg",
           "summary": "Almost no one thought SpaceX would make the catch, at least not on the first try. On the fifth integrated test flight of Starship, launched Oct. 13 from the company’s […]",
           "published_at": "2024-11-11T13:00:00Z",
+          "category": "Technology",
           "views":100
       },
       {
@@ -15,6 +16,7 @@ let jsonData = `
           "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2024/11/Shiyan25ABC-etc-Lijian1-JSLC-11nov2024-CASSpace-1.jpg",
           "summary": "HELSINKI — A Chinese commercial rocket sent 15 satellites into orbit late Sunday, including launch service provider CAS Space’s first international payload. The Lijian-1 (Kinetica-1) solid rocket lifted off at […]",
           "published_at": "2024-11-11T12:29:28Z",
+          "category": "Technology",
           "views":100
       },
       {
@@ -23,6 +25,7 @@ let jsonData = `
           "image_url": "https://europeanspaceflight.com/wp-content/uploads/2024/11/Arianespace-Pushes-Second-Flight-of-Ariane-6-to-February-2025.jpg",
           "summary": "Arianespace has announced that it will not attempt the second flight of its Ariane 6 rocket in 2024, with the launch now pushed to no earlier than February 2025. Ariane 6 was launched for the first time in July 2024. While the flight was labeled a success by Arianespace, an anomaly during the flight prevented […]",
           "published_at": "2024-11-11T10:21:12Z",
+          "category": "Technology",
           "views":100
       },
       {
@@ -31,6 +34,7 @@ let jsonData = `
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/1q4a4494.jpg?w=2048",
           "summary": "What is your name and your role with OCEANOS? My name is María Fernanda Barbarena-Arias. I am an associate professor of biology at the American University of Puerto Rico, Metropolitan Campus. I am also a co-PI in the OCEANOS project, and an instructor and mentor for the students during the internship. What is the importance […]",
           "published_at": "2024-11-11T09:44:53Z",
+          "category": "Environment",
           "views":100
       },
       {
@@ -39,6 +43,7 @@ let jsonData = `
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/img-2293.jpg?w=2048",
           "summary": "What is your name and your role with OCEANOS? My name is Samuel Suleiman and I am the Executive Director of Sociedad Ambiente Marino: an NGO in Puerto Rico that has been working for the last 25 years to conserve our coastline and our reefs. During the OCEANOS internship, I am one of the Co-PIs […]",
           "published_at": "2024-11-11T09:36:07Z",
+          "category": "Environment",
           "views":100
       },
       {
@@ -47,6 +52,7 @@ let jsonData = `
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/1q4a1721.jpg?w=2048",
           "summary": "What is your name and your role with OCEANOS? My name is Ray Armstrong and I am a professor in the Department of Marine Sciences of the University of Puerto Rico. I came to be involved in OCEANOS because my ex-student and good friend Juan Torres-Perez, who works at NASA Ames Research Center, came up […]",
           "published_at": "2024-11-11T09:35:49Z",
+          "category": "Environment",
           "views":100
       },
       {
@@ -55,6 +61,7 @@ let jsonData = `
           "image_url": "https://www.nasa.gov/wp-content/uploads/2024/11/1q4a4282.jpg?w=2048",
           "summary": "What is your name and your role with OCEANOS? My name is Juan Torres-Pérez. I am a research scientist at NASA Ames Research Center in the Earth Sciences division, biospheric sciences branch. I am the PI of OCEANOS, which stands for Ocean Community Engagement and Awareness with NASA Observations and Science for Hispanic/Latino students. What […]",
           "published_at": "2024-11-11T09:35:23Z",
+          "category": "Environment",
           "views":100
       },
       {
@@ -63,6 +70,7 @@ let jsonData = `
           "image_url": "http://spaceflightnow.com/wp-content/uploads/2024/11/20241110_koreasat-6a_render_small.jpeg",
           "summary": "Liftoff of the Koreasat-6A mission from Launch Complex 39A (LC-39A) at NASA’s Kennedy Space Center is set for 12:07 p.m. EST (1707 UTC).",
           "published_at": "2024-11-11T00:55:22Z",
+          "category": "Technology",
           "views":100
       },
       {
@@ -71,6 +79,7 @@ let jsonData = `
           "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2014/11/SkylonSabre2_RE4X3_0.jpg",
           "summary": "Reaction Engines Ltd., a British company that has worked for decades on an air-breathing rocket engine for spaceplanes and other hypersonic vehicles, has filed for bankruptcy.",
           "published_at": "2024-11-11T00:26:05Z",
+          "category": "Technology",
           "views":100
       },
       {
@@ -79,6 +88,7 @@ let jsonData = `
           "image_url": "https://spacepolicyonline.com/wp-content/uploads/2024/11/John-Thune-240x300.jpg",
           "summary": "Here is SpacePolicyOnline.com’s list of space policy events for the week of November 10-16, 2024 and any insight we can offer about them. The House and Senate return to work...",
           "published_at": "2024-11-10T23:19:21Z",
+          "category": "Politics",
           "views":100
       }
   ]
@@ -86,40 +96,59 @@ let jsonData = `
 
 let data = JSON.parse(jsonData);
 
-// Insert the first article as the main article
-let firstArticle = data.articles[0];
-let mainArticleHTML = `
-<div class="row gx-4 gx-lg-5 align-items-center my-5">
-    <div class="col-lg-7">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
-    </div>
-    <div class="col-lg-5">
-        <h1 class="font-weight-light">${firstArticle.title}</h1>
-        <p>${firstArticle.summary}</p>
-        <a class="btn btn-primary" href="#!">Read More</a>
-    </div>
-</div>`;
-
-document.getElementById('article-main-container').innerHTML = mainArticleHTML;
-
-// Remove the first article from the list
-data.articles = data.articles.slice(1);
-
-
+// Container for articles
 let container = document.getElementById('articles-container');
-// Insert the remaining articles
-data.articles.forEach((article) => {
-    let articleHTML = `
-    <div class="col-md-4 mb-5">
-        <div class="card h-100">
-            <img src="${article.image_url}" alt="Article Image" class="card-img-top">
-            <div class="card-body">
-                <h2 class="card-title">${article.title}</h2>
-                <p class="card-text">${article.summary}</p>
-            </div>
-            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+
+// Function to filter articles by category
+function filterArticlesByCategory(category) {
+    let filteredArticles = category === 'All' ? data.articles : data.articles.filter(article => article.category === category);
+
+    let firstArticle = filteredArticles[0];
+    let mainArticleHTML = `
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="${firstArticle.image_url}" alt="Article Image" />
+        </div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">${firstArticle.title}</h1>
+            <p>${firstArticle.summary}</p>
+            <a class="btn btn-primary" href="#!">Read More</a>
         </div>
     </div>`;
 
-    container.innerHTML += articleHTML;
+    document.getElementById('article-main-container').innerHTML = mainArticleHTML;
+
+    filteredArticles = filteredArticles.slice(1)
+
+    // Clear the existing articles in the container
+    container.innerHTML = '';
+
+    // Insert the filtered articles
+    filteredArticles.forEach((article) => {
+        let articleHTML = `
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img src="${article.image_url}" alt="Article Image" class="card-img-top">
+                <div class="card-body">
+                    <h2 class="card-title">${article.title}</h2>
+                    <p class="card-text">${article.summary}</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+            </div>
+        </div>`;
+
+        container.innerHTML += articleHTML;
+    });
+}
+
+// Event listeners for category links
+document.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = e.target.textContent;
+        filterArticlesByCategory(category);
+    });
 });
+
+// Initial rendering of articles
+filterArticlesByCategory('All');
