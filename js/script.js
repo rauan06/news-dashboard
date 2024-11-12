@@ -121,3 +121,43 @@ function sortArticles(criteria) {
     sortCriteria = criteria; // Update the sorting criteria based on the button clicked
     filterArticles(); // Reapply the filtering and sorting with the new criteria
 }
+
+function toggleDarkMode() {
+    const body = document.body;
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    const modalContent = document.querySelector(".modal-content");
+    const toggleButton = document.getElementById("toggleDarkMode");
+    const articleModules = document.querySelectorAll("#articles-container .article-module");
+
+    // Toggle dark mode classes
+    body.classList.toggle("dark-mode");
+    header.classList.toggle("dark-mode");
+    footer.classList.toggle("dark-mode");
+    modalContent.classList.toggle("dark-mode");
+
+    // Apply dark mode class to each article module
+    articleModules.forEach(module => module.classList.toggle("dark-mode"));
+
+    // Toggle dark mode on buttons and lines
+    document.querySelectorAll(".btn-secondary").forEach(button => button.classList.toggle("dark-mode"));
+    document.querySelectorAll(".line").forEach(line => line.classList.toggle("dark-mode"));
+
+    // Change button text
+    if (body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "🌞 Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggleButton.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// Apply saved theme on load
+window.addEventListener("load", () => {
+    const toggleButton = document.getElementById("toggleDarkMode");
+    if (localStorage.getItem("theme") === "dark") {
+        toggleDarkMode();  // This will also set the button text
+        toggleButton.textContent = "🌞 Light Mode";
+    }
+});

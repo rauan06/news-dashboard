@@ -13,6 +13,10 @@
 </head>
 
 <body>
+    <header class="container d-flex justify-content-between align-items-center">
+
+        <button class="btn btn-light" id="toggleDarkMode" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </header>
     <!-- Responsive navbar-->
     <header class="container">
         <h1 class="header-title text-center py-3">NEWS DASHBOARD</h1>
@@ -26,7 +30,7 @@
 
             <!-- Modal (Popup window) -->
             <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-dialog modal-dialog-centered modal-sm modal-md modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalTitle">Modal title</h5>
@@ -47,14 +51,15 @@
             <!-- Main Content -->
             <main class="col-12">
                 <div class="container px-4 px-lg-5">
-                    <!-- Heading Row-->
+                    <!-- Heading Row -->
                     <div class="row gx-4 gx-lg-5 align-items-center mt-5" id="article-main-container">
                         <!-- Main article insertion -->
                     </div>
+
                     <!-- Search, Filter, and Sort Bar -->
                     <div class="row mb-5">
                         <!-- Filter Dropdown (Left) -->
-                        <div class="col-2 ">
+                        <div class="col-12 col-sm-4 col-md-2 mb-3 mb-md-0">
                             <select id="filterDropdown" class="form-select" onchange="handleFilterChange()">
                                 <option value="All">All Categories</option>
                                 <option value="Technology">Technology</option>
@@ -65,22 +70,24 @@
                         </div>
 
                         <!-- Search Bar (Center) -->
-                        <div class="col-12 col-md-6  d-flex justify-content-center">
+                        <div class="col-12 col-sm-8 col-md-6 mb-3 mb-md-0 d-flex justify-content-center">
                             <input id="searchBar" class="form-control" type="text" placeholder="Search articles..." onkeyup="handleSearchChange()" />
                         </div>
 
-                        <!-- Sort Dropdown (Right) -->
-                        <div class="col-4 text-end">
-                            <button class="btn btn-secondary" onclick="sortArticles('views')">Sort by Views</button>
-                            <button class="btn btn-secondary" onclick="sortArticles('title')">Sort by Title</button>
+                        <!-- Sort Buttons (Right) -->
+                        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+                            <button class="btn btn-secondary me-2 mb-2 mb-md-0" onclick="sortArticles('views')">Sort by Views</button>
+                            <button class="btn btn-secondary mb-2 mb-md-0" onclick="sortArticles('title')">Sort by Title</button>
                         </div>
                     </div>
-                    <!-- Content Row-->
+
+                    <!-- Content Row -->
                     <div class="row gx-4 gx-lg-5" id="articles-container">
                         <!-- Articles will be inserted here -->
                     </div>
                 </div>
             </main>
+
         </div>
     </div>
     <!-- Footer-->
